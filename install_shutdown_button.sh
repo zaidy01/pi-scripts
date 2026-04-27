@@ -12,13 +12,13 @@ from gpiozero import Button
 from signal import pause
 import os
 
-button = Button(17, pull_up=True, bounce_time=0.2)
+button = Button(17, pull_up=True, bounce_time=0.1)
 
 def shutdown():
     os.system("shutdown -h now")
 
 button.when_held = shutdown
-button.hold_time = 2
+button.hold_time = 1
 
 pause()
 PYEOF
